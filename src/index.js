@@ -20,7 +20,7 @@ const scrape = (host, elems, callback) => {
   validate(elems, (error) => {
 
     if (error) {
-      callback(error);
+      return callback(error);
     }
 
     /**
@@ -30,10 +30,7 @@ const scrape = (host, elems, callback) => {
     url (host, (error, html) => {
 
       if (error) {
-        callback(error);
-      }else if(!html){
-          return callback("The URL does not exist!");
-
+        return callback(error);
       }
 
       let count = 0;

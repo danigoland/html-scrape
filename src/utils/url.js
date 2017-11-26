@@ -11,12 +11,16 @@ const url = (host, callback) => {
   request(host, (error, response, body) => {
 
     // If error, or statusCode is off
-    if (error || response.statusCode !== 200) {
+    if (error) {
       callback(error);
+    }else if(response.statusCode !== 200){
+      callback(new Error(response.statusCode))
+    }
+    else{
+        callback(false, body);
     }
 
-    callback(false, body);
   });
-}
+};
 
 export default url;
