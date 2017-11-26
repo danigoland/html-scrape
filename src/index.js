@@ -31,6 +31,9 @@ const scrape = (host, elems, callback) => {
 
       if (error) {
         callback(error);
+      }else if(!html){
+          return callback("The URL does not exist!");
+
       }
 
       let count = 0;
