@@ -5,3 +5,5 @@ test
 .babelrc
 .gitignore
 .travis.yml
+/.idea
+package-lock.json
